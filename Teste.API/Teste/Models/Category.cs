@@ -11,7 +11,10 @@ namespace Teste.Models
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Campo obrigatório.")]
+        [Display(Name = "Título da Categoria")]
+        [Required(ErrorMessage = "O título da categoria é obrigatório", AllowEmptyStrings = false)]
+        [MinLength(3, ErrorMessage = "O título da categoria deve ter entre 3 e 100 caracteres")]
+        [MaxLength(100, ErrorMessage = "O título da categoria deve ter entre 3 e 100 caracteres")]
         public string Title { get; set; }
     }
 }
